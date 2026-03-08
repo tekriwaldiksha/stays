@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Stays in Bir, Himachal Pradesh</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(255,255,255,0.03) 0%, transparent 50%);
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero h1 span { color: #5eead4; }
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 540px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(94,234,212,0.15);
+    border: 1px solid rgba(94,234,212,0.3);
+    color: #5eead4;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* Grid */
+  .container {
+    max-width: 1120px;
+    margin: -30px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  /* Card */
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+
+  /* Card Image */
+  .card-img {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-img .overlay-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Diksha's Pick highlight */
+  .card.diksha-pick {
+    border: 2px solid #5eead4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(94,234,212,0.15);
+  }
+  .card.diksha-pick:hover {
+    box-shadow: 0 12px 32px rgba(94,234,212,0.25);
+  }
+  .card-img .diksha-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #5eead4, #2dd4bf);
+    color: #042f2e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .card-img .price-tag {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+
+  .bg-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+  .bg-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+  .bg-3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+  .bg-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+  .bg-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+  .bg-6 { background: linear-gradient(135deg, #a18cd1, #fbc2eb); }
+  .bg-7 { background: linear-gradient(135deg, #fccb90, #d57eeb); }
+  .bg-8 { background: linear-gradient(135deg, #e0c3fc, #8ec5fc); }
+
+  /* Card Body */
+  .card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1a1a2e;
+  }
+  .card-body .location {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .card-body .description {
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin-bottom: 14px;
+    flex: 1;
+    line-height: 1.55;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-green  { background: #d1fae5; color: #065f46; }
+  .tag-blue   { background: #dbeafe; color: #1e40af; }
+  .tag-purple { background: #ede9fe; color: #5b21b6; }
+  .tag-amber  { background: #fef3c7; color: #92400e; }
+  .tag-rose   { background: #ffe4e6; color: #9f1239; }
+  .tag-cyan   { background: #cffafe; color: #155e75; }
+  .tag-orange { background: #ffedd5; color: #9a3412; }
+
+  /* CTA */
+  .card-footer {
+    padding: 0 20px 20px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: #1a1a2e;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #2d2d4a; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: #9ca3af;
+    font-size: 0.8rem;
+  }
+  .footer a { color: #6366f1; text-decoration: none; }
+
+  /* Creator Profile */
+  .creator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+    position: relative;
+  }
+  .creator img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(94,234,212,0.5);
+  }
+  .creator-info {
+    text-align: left;
+  }
+  .creator-info .name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .creator-info .name a {
+    color: #5eead4;
+    text-decoration: none;
+  }
+  .creator-info .tagline {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    color: #fff;
+  }
+
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 1.8rem; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Curated Collection</div>
+  <h1>Best Stays in <span>Bir, Himachal Pradesh</span></h1>
+  <p>Handpicked homestays, villas & hostels for your next Himalayan getaway</p>
+  <div class="creator">
+    <img src="images/dikshaunfoldslife.jpg" alt="Diksha Tekriwal">
+    <div class="creator-info">
+      <div class="name">Recommendations by <a href="https://www.instagram.com/dikshaunfoldslife/" target="_blank">@dikshaunfoldslife</a></div>
+      <div class="tagline">Diksha Tekriwal | Talking Travel Guide</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="grid">
+
+    <!-- 1. The Himaal -->
+    <div class="card">
+      <div class="card-img">
+        <img src="images/himaalbir.jpg" alt="The Himaal, Bir">
+        <div class="overlay-tag">Luxury</div>
+      </div>
+      <div class="card-body">
+        <h3>The Himaal, Bir</h3>
+        <div class="location">&#128205; Bir, Kangra District</div>
+        <p class="description">Luxury boutique homestay with boho interiors, mountain views, and sustainable practices. Run by an IHM-A hospitality veteran.</p>
+        <div class="tags">
+          <span class="tag tag-purple">Boutique</span>
+          <span class="tag tag-amber">Mountain View</span>
+          <span class="tag tag-cyan">Eco-Friendly</span>
+          <span class="tag tag-rose">Adults Only</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=30186864" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 2. Dormigo -->
+    <div class="card diksha-pick">
+      <div class="card-img">
+        <img src="images/dormigo.jpg" alt="Dormigo">
+        <div class="overlay-tag">Budget</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Dormigo</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">Cozy and well-located stay in the heart of Bir. Perfect for backpackers and solo travelers looking for a comfortable base.</p>
+        <div class="tags">
+          <span class="tag tag-green">Central Location</span>
+          <span class="tag tag-amber">Solo Friendly</span>
+          <span class="tag tag-blue">Backpackers</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=4038436" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 3. Little Bir -->
+    <div class="card diksha-pick">
+      <div class="card-img">
+        <img src="images/littlebir.jpg" alt="Little Bir">
+        <div class="overlay-tag">Mid-Range</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Little Bir</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">A charming little retreat that captures the essence of Bir. Great for couples and small groups seeking tranquility.</p>
+        <div class="tags">
+          <span class="tag tag-rose">Couples</span>
+          <span class="tag tag-green">Peaceful</span>
+          <span class="tag tag-purple">Scenic</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=33840041" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 4. Arth Heritage Homestay -->
+    <div class="card diksha-pick">
+      <div class="card-img">
+        <img src="images/arth.jpeg.avif" alt="Arth Heritage Homestay">
+        <div class="overlay-tag">Budget</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Arth | Heritage Homestay</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">A beautifully restored heritage homestay blending traditional Himachali architecture with modern comforts. Rich cultural experience.</p>
+        <div class="tags">
+          <span class="tag tag-orange">Heritage</span>
+          <span class="tag tag-purple">Cultural</span>
+          <span class="tag tag-amber">Authentic</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.airbnb.co.uk/rooms/49464278?unique_share_id=385c7b85-d1d5-4594-8112-48572e3b7cec&viralityEntryPoint=1&s=76" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 5. TLO - The Life Outdoor -->
+    <div class="card">
+      <div class="card-img">
+        <img src="images/Thelifeoutdoor.jpg" alt="TLO - The Life Outdoor">
+        <div class="overlay-tag">Mid-Range</div>
+      </div>
+      <div class="card-body">
+        <h3>TLO - The Life Outdoor</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">Built for adventure seekers. Close to paragliding sites with outdoor activities, campfires, and a vibrant traveler community.</p>
+        <div class="tags">
+          <span class="tag tag-rose">Paragliding</span>
+          <span class="tag tag-blue">Adventure</span>
+          <span class="tag tag-amber">Campfire</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=69426480" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 6. The Birdhouse Villa -->
+    <div class="card">
+      <div class="card-img">
+        <img src="images/birdhouse.jpg" alt="The Birdhouse Villa">
+        <div class="overlay-tag">Budget</div>
+      </div>
+      <div class="card-body">
+        <h3>The Birdhouse Villa</h3>
+        <div class="location">&#128205; Palampur / Bir</div>
+        <p class="description">Boutique B&B with garden views, in-house bakery, and cozy rooms. Near the paragliding landing site with peaceful tea garden surroundings.</p>
+        <div class="tags">
+          <span class="tag tag-green">Garden View</span>
+          <span class="tag tag-cyan">Bakery</span>
+          <span class="tag tag-blue">Pet Friendly</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=31475322" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 7. Paarli Dhara -->
+    <div class="card diksha-pick">
+      <div class="card-img">
+        <img src="images/paaridhara.jpg" alt="Paarli Dhara">
+        <div class="overlay-tag">Luxury</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Paarli Dhara</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">A serene hideaway surrounded by nature. Ideal for those seeking a digital detox and slow-paced Himalayan living.</p>
+        <div class="tags">
+          <span class="tag tag-purple">Nature Retreat</span>
+          <span class="tag tag-green">Serene</span>
+          <span class="tag tag-cyan">Digital Detox</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=64413435" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 8. The Hosteller -->
+    <div class="card">
+      <div class="card-img">
+        <img src="images/hosteller.jpg" alt="The Hosteller">
+        <div class="overlay-tag">Budget</div>
+      </div>
+      <div class="card-body">
+        <h3>The Hosteller</h3>
+        <div class="location">&#128205; Bir, Himachal Pradesh</div>
+        <p class="description">India's beloved hostel chain with a Bir outpost. Dorms and private rooms, common areas, and a built-in backpacker community.</p>
+        <div class="tags">
+          <span class="tag tag-blue">Hostel</span>
+          <span class="tag tag-rose">Social</span>
+          <span class="tag tag-green">Community</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.agoda.com/partners/partnersearch.aspx?pcs=1&cid=1933807&hid=17030477" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <p>Recommendations by <a href="https://www.instagram.com/dikshaunfoldslife/" target="_blank">Diksha Tekriwal (@dikshaunfoldslife)</a></p>
+  <p style="margin-top:6px;">Booking through our links helps support this guide at no extra cost to you.</p>
+</div>
+
+</body>
+</html>
