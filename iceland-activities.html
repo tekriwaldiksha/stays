@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Iceland Adventure: Must-Try Activities</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --container-max-width: 800px;
+  }
+ 
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+ 
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+ 
+  /* Hero */
+  .hero {
+    background: linear-gradient(135deg, #0b1628, #162544, #1b3a5c);
+    color: #fff;
+    text-align: center;
+    padding: 80px 24px 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle at 30% 70%, rgba(99,200,255,0.05) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(160,220,255,0.04) 0%, transparent 50%);
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .hero h1 span { color: #7dd3fc; }
+  .hero p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 580px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .hero .badge {
+    display: inline-block;
+    background: rgba(125,211,252,0.15);
+    border: 1px solid rgba(125,211,252,0.3);
+    color: #7dd3fc;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    position: relative;
+  }
+ 
+  /* Grid */
+  .container {
+    max-width: var(--container-max-width);
+    margin: 20px auto 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+ 
+  /* Card */
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  }
+
+  /* Diksha's Pick highlight */
+  .card.diksha-pick {
+    border: 2px solid #5eead4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(94,234,212,0.15);
+  }
+  .card.diksha-pick:hover {
+    box-shadow: 0 12px 32px rgba(94,234,212,0.25);
+  }
+  .card-img .diksha-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(135deg, #5eead4, #2dd4bf);
+    color: #042f2e;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Card Image */
+  .card-img {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+  }
+  .card-img .overlay-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card-img .price-tag {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: #fff;
+    color: #1a1a2e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+ 
+  .bg-1 { background: linear-gradient(135deg, #0ea5e9, #38bdf8); }
+  .bg-2 { background: linear-gradient(135deg, #6366f1, #818cf8); }
+  .bg-3 { background: linear-gradient(135deg, #06b6d4, #67e8f9); }
+  .bg-4 { background: linear-gradient(135deg, #3b82f6, #93c5fd); }
+  .bg-5 { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+  .bg-6 { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+  .bg-7 { background: linear-gradient(135deg, #2563eb, #60a5fa); }
+  .bg-8 { background: linear-gradient(135deg, #7c3aed, #c4b5fd); }
+  .bg-9 { background: linear-gradient(135deg, #059669, #34d399); }
+  .bg-10 { background: linear-gradient(135deg, #4f46e5, #818cf8); }
+  .bg-11 { background: linear-gradient(135deg, #0284c7, #38bdf8); }
+  .bg-12 { background: linear-gradient(135deg, #b45309, #fbbf24); }
+  .bg-13 { background: linear-gradient(135deg, #0f766e, #5eead4); }
+  .bg-14 { background: linear-gradient(135deg, #1d4ed8, #93c5fd); }
+  .bg-15 { background: linear-gradient(135deg, #9333ea, #d8b4fe); }
+  .bg-16 { background: linear-gradient(135deg, #0e7490, #67e8f9); }
+  .bg-17 { background: linear-gradient(135deg, #c2410c, #fb923c); }
+  .bg-18 { background: linear-gradient(135deg, #4338ca, #a5b4fc); }
+  .bg-19 { background: linear-gradient(135deg, #047857, #6ee7b7); }
+  .bg-20 { background: linear-gradient(135deg, #7e22ce, #e9d5ff); }
+  .bg-21 { background: linear-gradient(135deg, #1e40af, #60a5fa); }
+  .bg-22 { background: linear-gradient(135deg, #064e3b, #34d399); }
+  .bg-23 { background: linear-gradient(135deg, #0c4a6e, #7dd3fc); }
+ 
+  /* Card Body */
+  .card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-body h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #1a1a2e;
+  }
+  .card-body .location {
+    font-size: 0.8rem;
+    color: #6b7280;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+ 
+  .card-body .description {
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin-bottom: 14px;
+    flex: 1;
+    line-height: 1.55;
+  }
+ 
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag-green  { background: #d1fae5; color: #065f46; }
+  .tag-blue   { background: #dbeafe; color: #1e40af; }
+  .tag-purple { background: #ede9fe; color: #5b21b6; }
+  .tag-amber  { background: #fef3c7; color: #92400e; }
+  .tag-rose   { background: #ffe4e6; color: #9f1239; }
+  .tag-cyan   { background: #cffafe; color: #155e75; }
+  .tag-orange { background: #ffedd5; color: #9a3412; }
+  .tag-sky    { background: #e0f2fe; color: #075985; }
+ 
+  /* Tips */
+  .card-tips {
+    background: #f8fafc;
+    border-radius: 8px;
+    margin-bottom: 14px;
+  }
+  .card-tips summary {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 10px 12px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .card-tips summary::-webkit-details-marker { display: none; }
+  .card-tips summary::after {
+    content: '+';
+    font-size: 1rem;
+    font-weight: 600;
+    color: #9ca3af;
+    transition: transform 0.2s;
+  }
+  .card-tips[open] summary::after {
+    content: '−';
+  }
+  .card-tips ul {
+    list-style: none;
+    padding: 0 12px 10px;
+    margin: 0;
+  }
+  .card-tips ul li {
+    font-size: 0.78rem;
+    color: #6b7280;
+    padding: 2px 0;
+    padding-left: 18px;
+    position: relative;
+  }
+  .card-tips ul li::before {
+    content: '\1F4A1';
+    position: absolute;
+    left: 0;
+    font-size: 0.7rem;
+  }
+
+  /* CTA */
+  .card-footer {
+    padding: 0 20px 20px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background: #1a1a2e;
+    color: #fff;
+  }
+  .btn-primary:hover { background: #2d2d4a; }
+ 
+  /* Discount Banner */
+  .discount-banner {
+    max-width: var(--container-max-width);
+    margin: 0 auto 32px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .discount-inner {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .discount-left {
+    flex: 1;
+    min-width: 260px;
+  }
+  .discount-left h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .discount-left p {
+    color: rgba(255,255,255,0.7);
+    font-size: 0.9rem;
+  }
+  .discount-code {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    border: 2px dashed rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 12px 20px;
+  }
+  .discount-code span {
+    color: #fbbf24;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+  .discount-code small {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+ 
+  /* Top CTA */
+  .top-cta {
+    max-width: var(--container-max-width);
+    margin: -20px auto 24px;
+    padding: 0 20px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+  .top-cta .btn-gyg {
+    padding: 10px 22px;
+    font-size: 0.82rem;
+  }
+  .top-cta .discount-hint {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 8px;
+  }
+
+  /* GetYourGuide CTA */
+  .gyg-banner {
+    max-width: var(--container-max-width);
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .gyg-inner {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .gyg-inner p {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a1a2e;
+  }
+  .btn-gyg {
+    display: inline-block;
+    background: #ff5533;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-gyg:hover { background: #e6441f; }
+ 
+  /* Creator Profile */
+  .creator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 24px;
+    position: relative;
+  }
+  .creator img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(125,211,252,0.5);
+  }
+  .creator-info { text-align: left; }
+  .creator-info .name { font-size: 0.9rem; font-weight: 600; color: #fff; }
+  .creator-info .name a { color: #7dd3fc; text-decoration: none; }
+  .creator-info .tagline { font-size: 0.75rem; opacity: 0.6; color: #fff; }
+ 
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 40px 24px;
+    color: #9ca3af;
+    font-size: 0.8rem;
+  }
+ 
+  @media (max-width: 700px) {
+    .hero h1 { font-size: 1.8rem; }
+.discount-inner { flex-direction: column; text-align: center; }
+    .gyg-inner { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+ 
+<div class="hero">
+  <div class="badge">Iceland Adventure &middot; Must-Try Activities</div>
+  <h1>My <span>Iceland</span> Adventure</h1>
+  <p>From geothermal lagoons to glacier hikes and whale watching — handpicked activities for an unforgettable trip</p>
+  <div class="creator">
+    <img src="images/dikshaunfoldslife.jpg" alt="Diksha Tekriwal">
+    <div class="creator-info">
+      <div class="name">Recommendations by <a href="https://www.instagram.com/dikshaunfoldslife/" target="_blank">@dikshaunfoldslife</a></div>
+      <div class="tagline">Diksha Tekriwal | Talking Travel Guide</div>
+    </div>
+  </div>
+</div>
+
+<div class="top-cta">
+  <a href="https://gyg.me/bonvoyagerr-app" class="btn-gyg" target="_blank">Download GetYourGuide &darr;</a>
+  <p class="discount-hint">A little treat waiting at the bottom</p>
+</div>
+
+<div class="container">
+  <div class="grid">
+ 
+    <!-- 1. Sky Lagoon -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-1">
+        <img src="images/iceland/sky-lagoon.jpg" alt="Sky Lagoon">
+        <div class="overlay-tag">Must Do</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Sky Lagoon</h3>
+        <div class="location">&#128205; Reykjavik</div>
+        <p class="description">Experience the iconic 7-step Icelandic bathing ritual — from warm lagoon soaks to cold plunges, a scenic sauna, body scrub, and crowberry juice.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Bring a bathing suit for water activities</li>
+            <li>Eat a good breakfast before visiting to save on food/drinks</li>
+            <li>Carry shades/goggles and hair ties/clips</li>
+            <li>Use a waterproof phone cover to capture memories safely</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-cyan">7-Step Ritual</span>
+          <span class="tag tag-blue">Spa</span>
+          <span class="tag tag-green">Towel Included</span>
+          <span class="tag tag-amber">Geothermal</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/HZh1rdEL" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 2. Blue Lagoon -->
+    <div class="card">
+      <div class="card-img bg-2">
+        <img src="images/iceland/blue-lagoon.jpg" alt="Blue Lagoon">
+        <div class="overlay-tag">Iconic</div>
+      </div>
+      <div class="card-body">
+        <h3>Blue Lagoon</h3>
+        <div class="location">&#128205; Reykjavik</div>
+        <p class="description">World-famous geothermal waters rich in minerals, known to rejuvenate skin. Enjoy the in-water bar, a silica mud mask, and a luxurious soak in this natural wonder.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Always bring a bathing suit</li>
+            <li>Apply conditioner before entering to protect your hair</li>
+            <li>Avoid dipping hair in water — minerals can make it dry</li>
+            <li>Shampoo and condition your hair properly after exiting</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Geothermal</span>
+          <span class="tag tag-purple">Mud Mask</span>
+          <span class="tag tag-green">Drink Included</span>
+          <span class="tag tag-cyan">Skin Rejuvenation</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/lYWG1JOy" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 3. Husavik Whale Watching -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-3">
+        <img src="images/iceland/whale-watching.jpg" alt="Whale Watching">
+        <div class="overlay-tag">Wildlife</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Whale Watching Tour</h3>
+        <div class="location">&#128205; H&uacute;sav&iacute;k, North Iceland</div>
+        <p class="description">H&uacute;sav&iacute;k is known as the whale-watching capital of Iceland. The waters are home to humpback whales, orcas, and other species. A fantastic way to see these majestic creatures up close.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Dress warmly and in layers — the boat can get cold, especially in winter</li>
+            <li>Don't forget your camera to capture the whales!</li>
+            <li>Combine with a visit to the H&uacute;sav&iacute;k Whale Museum for the full experience</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-sky">Whale Watching</span>
+          <span class="tag tag-green">Humpbacks</span>
+          <span class="tag tag-purple">Orcas</span>
+          <span class="tag tag-amber">Boat Tour</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/djF8lkKL" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 4. Katla Ice Cave & Super Jeep -->
+    <div class="card">
+      <div class="card-img bg-4">
+        <img src="images/iceland/katla-ice-cave.jpg" alt="Katla Ice Cave & Super Jeep">
+        <div class="overlay-tag">Adventure</div>
+      </div>
+      <div class="card-body">
+        <h3>Katla Ice Cave &amp; Super Jeep Tour</h3>
+        <div class="location">&#128205; From Vik, South Iceland</div>
+        <p class="description">Ride a super jeep to the Katla ice cave beneath the infamous Katla volcano. Explore stunning blue ice formations inside S&oacute;lheimaj&ouml;kull glacier. Only accessible during winter when the ice is stable.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Book in advance — tours are limited and weather-dependent</li>
+            <li>Dress warmly, it can be quite cold inside the caves</li>
+            <li>Carry food and drinks as nothing will be available once the tour starts</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Ice Cave</span>
+          <span class="tag tag-orange">Super Jeep</span>
+          <span class="tag tag-cyan">Glacier</span>
+          <span class="tag tag-rose">Winter Only</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/MeevH34G" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 5. Glacier Hike, Waterfalls & Black Sand Beach -->
+    <div class="card">
+      <div class="card-img bg-5">
+        <img src="images/iceland/glacier-hike.jpg" alt="Glacier Hike">
+        <div class="overlay-tag">Full Day</div>
+      </div>
+      <div class="card-body">
+        <h3>Glacier Hike, Waterfalls &amp; Black Sand Beach</h3>
+        <div class="location">&#128205; From Reykjavik</div>
+        <p class="description">A packed day trip featuring a glacier hike, iconic Seljalandsfoss (walk behind it!) &amp; Skogafoss waterfalls, and the dramatic Reynisfjara black sand beach with basalt columns.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Wear waterproof clothing — you'll get wet behind Seljalandsfoss</li>
+            <li>Bring gloves and a beanie, it gets extremely cold near the falls</li>
+            <li>Be careful of slippery rocks near the waterfalls</li>
+            <li>At Reynisfjara, avoid standing close to the water — sneaker waves are a risk</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-green">Glacier Hike</span>
+          <span class="tag tag-blue">Waterfalls</span>
+          <span class="tag tag-amber">Black Beach</span>
+          <span class="tag tag-purple">Day Trip</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/zs1aWcgI" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 6. Into the Glacier Ice Cave -->
+    <div class="card">
+      <div class="card-img bg-6">
+        <img src="images/iceland/langjokull.jpg" alt="Langjökull Glacier">
+        <div class="overlay-tag">Unique</div>
+      </div>
+      <div class="card-body">
+        <h3>Into the Glacier Ice Cave Adventure</h3>
+        <div class="location">&#128205; From H&uacute;safell, West Iceland</div>
+        <p class="description">Venture inside Langj&ouml;kull, Iceland's second-largest glacier, through man-made ice tunnels. A one-of-a-kind experience deep within the ice cap.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Book in advance — tours are limited and weather-dependent</li>
+            <li>Dress warmly, it can be quite cold inside the caves</li>
+            <li>Carry food and drinks as nothing will be available once the tour starts</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-cyan">Langj&ouml;kull</span>
+          <span class="tag tag-blue">Ice Tunnel</span>
+          <span class="tag tag-green">Year-Round</span>
+          <span class="tag tag-amber">Guided Tour</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/cDWko1bR" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 7. Blue Ice Cave & Glacier Hike on Vatnajokull -->
+    <div class="card">
+      <div class="card-img bg-7">
+        <img src="images/iceland/vatnajokull.jpg" alt="Vatnajökull Glacier">
+        <div class="overlay-tag">Epic</div>
+      </div>
+      <div class="card-body">
+        <h3>Blue Ice Cave &amp; Glacier Hike on Vatnaj&ouml;kull</h3>
+        <div class="location">&#128205; Skaftafell, Southeast Iceland</div>
+        <p class="description">Explore stunning blue ice caves formed within Vatnaj&ouml;kull, Europe's largest glacier. These caves are only accessible during winter when the ice is stable. Breathtaking crystal-blue formations await inside.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Book in advance — tours are limited and weather-dependent</li>
+            <li>Dress warmly, it can be quite cold inside the caves</li>
+            <li>Carry food and drinks as nothing will be available once the tour starts</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Blue Ice Cave</span>
+          <span class="tag tag-green">Glacier Hike</span>
+          <span class="tag tag-rose">Winter Only</span>
+          <span class="tag tag-purple">Vatnaj&ouml;kull</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/ALPQybED" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+ 
+    <!-- 8. Zip Line + Glacier Adventure -->
+    <div class="card">
+      <div class="card-img bg-8">
+        <img src="images/iceland/zipline.jpg" alt="Zip Line Tour">
+        <div class="overlay-tag">Adrenaline</div>
+      </div>
+      <div class="card-body">
+        <h3>Zip Line Tour + Glacier Adventure</h3>
+        <div class="location">&#128205; &THORN;&oacute;rsm&ouml;rk Valley, Iceland</div>
+        <p class="description">Zipline across glaciers in the stunning &THORN;&oacute;rsm&ouml;rk Valley for an adrenaline rush with spectacular aerial views. Enjoy the glacier landscape while speeding through the air. Includes hike or ice cave visit.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Wear sturdy shoes and gloves for a safe zipline experience</li>
+            <li>Don't forget a camera for those breathtaking views!</li>
+            <li>Carry food and drinks — the tour takes more than 4 hours</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-rose">Zipline</span>
+          <span class="tag tag-orange">Adrenaline</span>
+          <span class="tag tag-blue">Glacier Views</span>
+          <span class="tag tag-green">4+ Hours</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/ed6JdFch" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Northern Lights Tour -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-5">
+        <img src="images/iceland/northern-lights.jpg" alt="Northern Lights Tour">
+        <div class="overlay-tag">Magical</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Northern Lights Tour with Hot Cocoa &amp; Photos</h3>
+        <div class="location">&#128205; From Reykjavik</div>
+        <p class="description">Experience the amazing aurora borealis on a northern lights tour from Reykjavik. Stay cozy by wrapping up in Icelandic wool blankets and enjoy hot chocolate and pastries as you admire the display.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Dress in warm layers &mdash; you'll be outside in the cold for extended periods</li>
+            <li>Best chances are from September to March on clear nights</li>
+            <li>Bring a tripod for long-exposure aurora photos</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-purple">Aurora Borealis</span>
+          <span class="tag tag-cyan">Hot Chocolate</span>
+          <span class="tag tag-amber">Winter</span>
+          <span class="tag tag-green">Photos Included</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://gyg.me/oR3N2SLm" class="btn btn-primary" target="_blank">Check Availability &rarr;</a>
+      </div>
+    </div>
+
+    <!-- 9. Seljalandsfoss Waterfall -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-9">
+        <img src="images/iceland/seljalandsfoss.jpg" alt="Seljalandsfoss Waterfall">
+        <div class="overlay-tag">Free</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Seljalandsfoss Waterfall</h3>
+        <div class="location">&#128205; South Coast, Iceland</div>
+        <p class="description">One of Iceland's most famous waterfalls with a unique feature: you can walk behind it! The waterfall cascades 60 meters down and offers stunning photo opportunities, especially during sunset.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Wear waterproof clothing or bring a raincoat &mdash; you'll get wet walking behind the waterfall</li>
+            <li>Wear gloves and a beanie &mdash; it gets extremely cold near the falls</li>
+            <li>Use waterproof covers for electronics to stay dry</li>
+            <li>Be careful of slippery rocks</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Waterfall</span>
+          <span class="tag tag-green">Walk Behind It</span>
+          <span class="tag tag-cyan">60m Drop</span>
+          <span class="tag tag-amber">Parking Fee</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Skogafoss Waterfall -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-10">
+        <img src="images/iceland/skogafoss.jpg" alt="Skogafoss Waterfall">
+        <div class="overlay-tag">Free</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Skogafoss Waterfall</h3>
+        <div class="location">&#128205; South Coast, Iceland</div>
+        <p class="description">An iconic waterfall dropping 60 meters into a wide pool. Famous for its power and the rainbow that often appears on sunny days. Climb 370 steps to the viewing platform at the top for a panoramic view.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Climb the 370 steps to the viewing platform at the top for a panoramic view</li>
+            <li>Watch out for mist near the base &mdash; it can create slippery conditions</li>
+            <li>Wear waterproof clothing or bring a raincoat</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Waterfall</span>
+          <span class="tag tag-amber">Rainbow</span>
+          <span class="tag tag-green">370 Steps</span>
+          <span class="tag tag-cyan">Parking Fee</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Whale Museum -->
+    <div class="card">
+      <div class="card-img bg-11">
+        <img src="images/iceland/whale-museum.jpg" alt="Whale Museum">
+        <div class="overlay-tag">Culture</div>
+      </div>
+      <div class="card-body">
+        <h3>Whale Museum</h3>
+        <div class="location">&#128205; H&uacute;sav&iacute;k, North Iceland</div>
+        <p class="description">The Whale Museum in H&uacute;sav&iacute;k offers a comprehensive look at Iceland's rich whale-watching history. A great place to learn about the different species that inhabit Iceland's waters.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Combine your visit with a whale-watching tour for the full experience</li>
+            <li>Check the opening hours, as they may vary by season</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-sky">Museum</span>
+          <span class="tag tag-blue">Whales</span>
+          <span class="tag tag-purple">Educational</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Hallgrimskirkja -->
+    <div class="card">
+      <div class="card-img bg-12">
+        <img src="images/iceland/hallgrimskirkja.jpg" alt="Hallgrimskirkja">
+        <div class="overlay-tag">Landmark</div>
+      </div>
+      <div class="card-body">
+        <h3>Hallgr&iacute;mskirkja</h3>
+        <div class="location">&#128205; Reykjavik</div>
+        <p class="description">Reykjavik's most famous landmark, designed to resemble basalt lava columns found in Icelandic landscapes. Visit the tower for a 360-degree view of the city.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Visit early in the morning or late afternoon to avoid crowds</li>
+            <li>Don't miss the statue of Leif Erikson in front of the church</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-amber">Church</span>
+          <span class="tag tag-blue">Tower View</span>
+          <span class="tag tag-purple">Architecture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 13. Langisandur Beach -->
+    <div class="card">
+      <div class="card-img bg-13">
+        <img src="images/iceland/langisandur.jpg" alt="Langisandur Beach">
+        <div class="overlay-tag">Free</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Langisandur Beach</h3>
+        <div class="location">&#128205; Westfjords, Iceland</div>
+        <p class="description">A peaceful black sand beach known for its dramatic coastal scenery. Perfect for those looking for a quiet place to relax and enjoy nature away from the crowds.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Bring a warm jacket as the weather can be cold, even in summer</li>
+            <li>Be careful when walking on the sand, as the winds can be strong</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-cyan">Black Sand</span>
+          <span class="tag tag-blue">Westfjords</span>
+          <span class="tag tag-green">Peaceful</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 14. Ytri-Tunga Beach -->
+    <div class="card">
+      <div class="card-img bg-14">
+        <img src="images/iceland/ytri-tunga-beach.jpg" alt="Ytri-Tunga Beach">
+        <div class="overlay-tag">Wildlife</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Ytri-Tunga Beach</h3>
+        <div class="location">&#128205; Sn&aelig;fellsnes Peninsula, Iceland</div>
+        <p class="description">A secluded beach known for its seal colony. You can often spot seals lounging on the rocks, making it a great spot for wildlife enthusiasts.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Keep a safe distance from the seals and avoid disturbing them</li>
+            <li>Bring binoculars for a better view of the wildlife</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-green">Seals</span>
+          <span class="tag tag-blue">Beach</span>
+          <span class="tag tag-purple">Wildlife</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 15. Kirkjufell -->
+    <div class="card">
+      <div class="card-img bg-15">
+        <img src="images/iceland/kirkjufell.jpg" alt="Kirkjufell">
+        <div class="overlay-tag">Scenic</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Kirkjufell</h3>
+        <div class="location">&#128205; Sn&aelig;fellsnes Peninsula, Iceland</div>
+        <p class="description">Often called "the most photographed mountain in Iceland," Kirkjufell stands tall near the coast. Its unique shape and picturesque surroundings make it a must-see.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Visit during the golden hour (early morning or late afternoon) for the best photos</li>
+            <li>Check the weather before visiting, as roads can be tricky in winter</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-purple">Mountain</span>
+          <span class="tag tag-amber">Photography</span>
+          <span class="tag tag-green">Iconic</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 16. Hauganes Beach Baths -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-16">
+        <img src="images/iceland/hauganes.jpg" alt="Hauganes Beach Baths">
+        <div class="overlay-tag">Relaxation</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Hauganes Beach Baths</h3>
+        <div class="location">&#128205; Hauganes, North Iceland</div>
+        <p class="description">Relax in natural hot tubs overlooking the fjord in Hauganes, a peaceful spot away from the usual tourist crowds. A great way to unwind after a day of exploring.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Bring a towel and swimwear</li>
+            <li>Book in advance as the hot tubs can fill up quickly</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-cyan">Hot Tubs</span>
+          <span class="tag tag-blue">Fjord Views</span>
+          <span class="tag tag-green">Off the Beaten Path</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 17. Reynisfjara Beach & Lighthouse -->
+    <div class="card">
+      <div class="card-img bg-17">
+        <img src="images/iceland/reynisfjara.jpg" alt="Reynisfjara Beach">
+        <div class="overlay-tag">Dramatic</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Reynisfjara Beach &amp; Lighthouse</h3>
+        <div class="location">&#128205; South Coast, Iceland</div>
+        <p class="description">Known for its black sand, towering basalt columns, and the Reynisdrangar sea stacks. One of Iceland's most dramatic locations. The nearby lighthouse provides panoramic views of the coast.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Be cautious of strong waves, as they can be dangerous</li>
+            <li>Avoid standing too close to the water &mdash; sneaker waves are a risk</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-orange">Black Sand</span>
+          <span class="tag tag-blue">Basalt Columns</span>
+          <span class="tag tag-rose">Sea Stacks</span>
+          <span class="tag tag-amber">Lighthouse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18. Dettifoss Waterfall -->
+    <div class="card">
+      <div class="card-img bg-18">
+        <img src="images/iceland/detifoss.jpg" alt="Dettifoss Waterfall">
+        <div class="overlay-tag">Powerful</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Dettifoss Waterfall</h3>
+        <div class="location">&#128205; Vatnaj&ouml;kull National Park, Northeast Iceland</div>
+        <p class="description">Europe's most powerful waterfall. An awe-inspiring sight with water plunging down 44 meters. Featured in movies like Prometheus.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Wear sturdy shoes and be prepared for a bit of a hike to get the best view</li>
+            <li>The area can be quite misty, so protect your camera gear</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-blue">Waterfall</span>
+          <span class="tag tag-purple">Most Powerful</span>
+          <span class="tag tag-amber">44m Drop</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 19. Godafoss Waterfall -->
+    <div class="card">
+      <div class="card-img bg-19">
+        <img src="images/iceland/godafoss.jpg" alt="Godafoss Waterfall">
+        <div class="overlay-tag">Historic</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Godafoss Waterfall</h3>
+        <div class="location">&#128205; North Iceland</div>
+        <p class="description">Known as the "Waterfall of the Gods," one of Iceland's most beautiful and historically significant waterfalls, where ancient lawgivers threw their pagan idols into the river when they converted to Christianity.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Visit both sides of the waterfall for different perspectives</li>
+            <li>Bring a tripod for great photos</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-green">Waterfall</span>
+          <span class="tag tag-purple">Historic</span>
+          <span class="tag tag-amber">Photography</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 20. Studlagil Canyon -->
+    <div class="card">
+      <div class="card-img bg-20">
+        <img src="images/iceland/studlagil.jpg" alt="Studlagil Canyon">
+        <div class="overlay-tag">Hidden Gem</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Studlagil Canyon</h3>
+        <div class="location">&#128205; East Iceland</div>
+        <p class="description">A lesser-known gem famous for its towering basalt columns and striking turquoise waters. A photographer's paradise.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Best visited in summer months &mdash; access may be limited during winter</li>
+            <li>Wear waterproof shoes as you may need to wade through shallow areas</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-purple">Canyon</span>
+          <span class="tag tag-cyan">Turquoise Water</span>
+          <span class="tag tag-amber">Basalt Columns</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 21. Vikings Village -->
+    <div class="card">
+      <div class="card-img bg-21">
+        <img src="images/iceland/vikings-village.jpg" alt="Vikings Village">
+        <div class="overlay-tag">Culture</div>
+      </div>
+      <div class="card-body">
+        <h3>Vikings Village</h3>
+        <div class="location">&#128205; Hafnarfj&ouml;r&eth;ur, Iceland</div>
+        <p class="description">Experience Iceland's Viking history with recreated Viking houses and activities such as archery and traditional meals. Step back in time for an immersive cultural experience.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Dress in warm clothing as it can be chilly, especially in the evenings</li>
+            <li>Book tours in advance if you want a guided experience</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-orange">Vikings</span>
+          <span class="tag tag-blue">History</span>
+          <span class="tag tag-green">Archery</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22. Vestrahorn Mountain -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-22">
+        <img src="images/iceland/vestrahorn.jpg" alt="Vestrahorn Mountain">
+        <div class="overlay-tag">Scenic</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+      </div>
+      <div class="card-body">
+        <h3>Vestrahorn Mountain</h3>
+        <div class="location">&#128205; Stokksnes Peninsula, Southeast Iceland</div>
+        <p class="description">A stunning mountain that rises dramatically out of the landscape, often framed by black sand dunes. One of the most photographed spots in Iceland.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Sunrise and sunset are the best times for photography</li>
+            <li>Be mindful of the weather, as it can change rapidly in this area</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-green">Mountain</span>
+          <span class="tag tag-amber">Photography</span>
+          <span class="tag tag-blue">Black Sand Dunes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 23. Diamond Beach -->
+    <div class="card diksha-pick">
+      <div class="card-img bg-23">
+        <img src="images/iceland/diamond-beach.jpg" alt="Diamond Beach">
+        <div class="overlay-tag">Magical</div>
+        <div class="diksha-badge">&#10024; Diksha's Pick</div>
+        <div class="price-tag">Free</div>
+      </div>
+      <div class="card-body">
+        <h3>Diamond Beach</h3>
+        <div class="location">&#128205; J&ouml;kuls&aacute;rl&oacute;n Glacier Lagoon, Southeast Iceland</div>
+        <p class="description">Where icebergs from the nearby glacier lagoon wash up on the shore, creating a magical scene with sparkling ice against the black sand.</p>
+        <details class="card-tips">
+          <summary>Tips</summary>
+          <ul>
+            <li>Visit during sunrise or sunset for the best light</li>
+            <li>Wear warm clothes as the winds can be chilly, especially in winter</li>
+          </ul>
+        </details>
+        <div class="tags">
+          <span class="tag tag-cyan">Icebergs</span>
+          <span class="tag tag-blue">Black Sand</span>
+          <span class="tag tag-purple">Glacier Lagoon</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+ 
+<!-- Discount Code Banner -->
+<div class="discount-banner">
+  <div class="discount-inner">
+    <div class="discount-left">
+      <h3>Get 5% Off Your Booking!</h3>
+      <p>Use the code below at checkout on GetYourGuide to save on any activity above.</p>
+    </div>
+    <div class="discount-code">
+      <div>
+        <small>DISCOUNT CODE</small><br>
+        <span>BONVOYAGERR5</span>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- Download GetYourGuide Banner -->
+<div class="gyg-banner">
+  <div class="gyg-inner">
+    <p>Download the GetYourGuide app for easy booking &amp; exclusive deals</p>
+    <a href="https://gyg.me/bonvoyagerr-app" class="btn-gyg" target="_blank">Download GetYourGuide &darr;</a>
+  </div>
+</div>
+ 
+<div class="footer">
+  <p>Curated from a real Iceland trip &middot; Prices are approximate and may vary by season</p>
+  <p style="margin-top:6px;">Booking through our links helps support this guide at no extra cost to you.</p>
+</div>
+ 
+</body>
+</html>
